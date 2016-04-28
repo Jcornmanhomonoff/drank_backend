@@ -3,7 +3,7 @@ class CreateDrinks < ActiveRecord::Migration
     create_table :drinks do |t|
       t.string :name
       t.text :ingredient
-      t.reference :user_id
+      t.references :user, index: true, foreign_key: true
 
       t.timestamps null: false
     end
