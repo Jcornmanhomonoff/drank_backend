@@ -13,12 +13,13 @@ end
 post '/sign-in' => 'users#signin'
 
 
-curl --include --request POST http://localhost:3000/change-password/2 \
+curl --include --request POST http://localhost:3000/drinks \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiUwOTZkY2FkMWIzYjcxYjA2MmI0ZTE0ZWU4MjBkYmEwNQY6BkVG--20959ae35ceeda144d18277fcdade48614fefd5d" \
   --data '{
-    "passwords": {
-      "old": "jess",
-      "new": "bob"
+    "drink": {
+      "name": "Name",
+      "user_id": "4"
     }
   }'
 

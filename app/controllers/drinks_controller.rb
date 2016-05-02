@@ -48,6 +48,7 @@ class DrinksController < ProtectedController
     head :no_content
   end
 
+
   private
 
     def set_drink
@@ -55,6 +56,6 @@ class DrinksController < ProtectedController
     end
 
     def drink_params
-      params.require(:drink).permit(:name, :ingredient, :user_id)
+      params.require(:drink).permit(:name, :user_id)
     end
 end
