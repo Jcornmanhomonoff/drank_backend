@@ -1,4 +1,4 @@
 class Ingredient < ActiveRecord::Base
-  has_many :drinks, through: :drink_ingredients
+  belongs_to :drinks, inverse_of: :ingredients
   has_many :drink_ingredients
 end

@@ -12,6 +12,16 @@ end
 
 post '/sign-in' => 'users#signin'
 
+curl --include --request POST http://localhost:3000/drink_ingredients \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Token token=BAhJIiU0MjgwZmJjZTdhNTUwNzg3MTU4NGNmNWU3YjRjYzIyZgY6BkVG--74adccf743c3f4443601ac423eb1eb8c970b1521" \
+  --data '{
+    "drink_ingredient": {
+      "drink_id": "16",
+      "ingredient_id": "1"
+    }
+  }'
+
 
 curl --include --request POST http://localhost:3000/drinks \
   --header "Content-Type: application/json" \

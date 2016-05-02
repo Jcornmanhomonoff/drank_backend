@@ -1,5 +1,5 @@
 class IngredientsController < ProtectedController
-  before_action :set_drink, only: [:show, :update, :destroy]
+  before_action :set_ingredient, only: [:show, :update, :destroy]
 
   # GET /ingredients
   # GET /ingredients.json

@@ -4,7 +4,7 @@ class DrinksController < ProtectedController
   # GET /drinks
   # GET /drinks.json
   def index
-    @drinks = Drink.all
+    @drinks = current_user.drinks
 
     render json: @drinks
   end
@@ -52,7 +52,7 @@ class DrinksController < ProtectedController
   private
 
     def set_drink
-      @drink = Drink.find(params[:id])
+      @drink = Drink.find(params[:id]).ingredients
     end
 
     def drink_params
