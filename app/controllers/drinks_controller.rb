@@ -5,7 +5,6 @@ class DrinksController < ProtectedController
   # GET /drinks.json
   def index
     @drinks = current_user.drinks
-
     render json: @drinks
   end
 
@@ -34,7 +33,7 @@ class DrinksController < ProtectedController
     @drink = Drink.find(params[:id])
 
     if @drink.update(drink_params)
-      head :no_content
+      render json: @drink, status: :ok
     else
       render json: @drink.errors, status: :unprocessable_entity
     end
@@ -52,7 +51,7 @@ class DrinksController < ProtectedController
   private
 
     def set_drink
-      @drink = Drink.find(params[:id]).ingredients
+      @drink = Drink.find(params[:id])
     end
 
     def drink_params
